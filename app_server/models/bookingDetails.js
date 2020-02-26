@@ -25,7 +25,7 @@ const bookingDetailsSchema = new schema({
     customerName:{
         type:String
     },
-    customerEmail:{
+    customerEmail :{
         type:String
     },
     description:{
