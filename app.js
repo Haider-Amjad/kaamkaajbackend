@@ -33,7 +33,6 @@ app.use(cors())
 
 // app.use(express.static(__dirname+'/client'));
 
-
 // Set up mongoose connection
 let dev_db_url = 'mongodb+srv://kaamkaaj:sp16bcs071@kaamkaaj-fsenj.mongodb.net/kaamkaaj?retryWrites=true&w=majority';
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
