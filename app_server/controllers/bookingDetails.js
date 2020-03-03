@@ -13,6 +13,10 @@ module.exports.addBookingDetails =async (bookingDetailsform, callback) => {
     record.title=bookingDetailsform.title;
     record.description=bookingDetailsform.description;
     record.urgent=bookingDetailsform.urgent;
+    record.customerName=bookingDetailsform.customerName;
+    record.customerEmail=bookingDetailsform.customerEmail;
+
+
     if(bookingDetailsform.picture)
     {
         try
@@ -44,7 +48,14 @@ module.exports.addBookingDetails =async (bookingDetailsform, callback) => {
     {
         record.urgent="";
     }
-
+    if(!bookingDetailsform.customerName)
+    {
+        record.customerName="";
+    }
+    if(!bookingDetailsform.customerEmail)
+    {
+        record.customerEmail="";
+    }
     record.save(callback);
 }
 

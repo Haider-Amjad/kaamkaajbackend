@@ -59,7 +59,7 @@ router.post('/signup_customer', function (req, res) {
 
 
 
-// Get All Customer
+// Get approved Customer
 router.get('/get_customer', function (req, res) {
     customer.getCustomer(function (err, result) {
         if (err) {
@@ -75,6 +75,7 @@ router.get('/get_customer', function (req, res) {
     });
 
 });
+
 
 
 // Update Customer Profile.
