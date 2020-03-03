@@ -3,23 +3,23 @@ const schema = mongoose.Schema;
 // Booking Details Schema
 
 const bookingDetailsSchema = new schema({
-    bookingstate:{
+    state:{
       type:String,
       default:"pending"
     },
     bookingType:{
         type:String
     },
-    bookingdate:{
+    date:{
         type:String
     },
-    bookingtime:{
+    time:{
         type:String
     },
-    bookingserviceProviderEmail:{
+    serviceProviderEmail:{
         type:String
     },
-    bookingserviceProviderName:{
+    serviceProviderName:{
         type:String
     },
     customerName:{
@@ -28,7 +28,7 @@ const bookingDetailsSchema = new schema({
     customerEmail :{
         type:String
     },
-    bookingdescription:{
+    description:{
         type:String
     },
     title:{
