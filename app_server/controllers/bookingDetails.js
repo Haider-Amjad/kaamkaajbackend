@@ -10,11 +10,21 @@ module.exports.getBookingDetailsByEmail = (email, callback) => {
 // Add bookingDetails
 module.exports.addBookingDetails =async (bookingDetailsform, callback) => {
     let record=new bookingDetails();
+
     record.title=bookingDetailsform.title;
     record.description=bookingDetailsform.description;
     record.urgent=bookingDetailsform.urgent;
     record.customerName=bookingDetailsform.customerName;
     record.customerEmail=bookingDetailsform.customerEmail;
+
+    record.date=bookingDetailsform.date;
+    record.time=bookingDetailsform.time;
+    record.serviceProviderEmail=bookingDetailsform.serviceProviderEmail;
+    record.serviceProviderName=bookingDetailsform.serviceProviderName;
+    record.state=bookingDetailsform.state;
+    record.bookingType=bookingDetailsform.bookingType;
+    
+    
 
 
     if(bookingDetailsform.picture)
@@ -56,6 +66,34 @@ module.exports.addBookingDetails =async (bookingDetailsform, callback) => {
     {
         record.customerEmail="";
     }
+
+
+    if(!bookingDetailsform.date)
+    {
+        record.date="";
+    }
+    if(!bookingDetailsform.time)
+    {
+        record.time="";
+    }
+
+    if(!bookingDetailsform.state)
+    {
+        record.state="pending";
+    }
+    if(!bookingDetailsform.serviceProviderEmail)
+    {
+        record.serviceProviderEmail="";
+    }
+    if(!bookingDetailsform.serviceProviderName)
+    {
+        record.serviceProviderName="";
+    }
+    if(!bookingDetailsform.bookingType)
+    {
+        record.bookingType="";
+    }
+
     record.save(callback);
 }
 
