@@ -196,6 +196,14 @@ module.exports.customerPendingBookings = (req, res) => {
         }));
 }
 
+module.exports.getPendingBookingDetails = (req, res) => {
+    bookingDetails.find({ state: "pending" })
+        .then(result => res.json(result)).catch(err => res.json({
+            status: "failed",
+            message: "Request Failed"
+        }));
+}
+
 
 // CUSTOMER ALL In Progress JOBS
 module.exports.customerInProgressBookings = (req, res) => {

@@ -7,10 +7,16 @@ const schema = mongoose.Schema;
 const requestSchema = new schema({
     
     booking_id:{
-        type:String,
+        type:String
         
       },
+      workdetail:{
+        type:String
+    },
     serviceProviderEmail:{
+        type:String
+    },
+    serviceProviderName:{
         type:String
     },
     state:{

@@ -23,7 +23,7 @@ var functions = require('../controllers/functions.js');
 
 router.get('/', function (req, res) {
     res.json({
-        message: "Welcome to Sport-X Backend"
+        message: "Welcome to Kaam Kaaj Backend"
     })
 });
 

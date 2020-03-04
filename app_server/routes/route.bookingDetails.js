@@ -192,6 +192,9 @@ router.get('/get_booking', function (req, res) {
 });
 
 
+router.get('/get_pendingbooking', bookingDetails.getPendingBookingDetails);
+
+
 // Get Booking Details by Email - Service Provider
 router.get('/get_bookingdetails/:email', function (req, res) {
     bookingDetails.getBookingDetailsByEmail(req.params.email, function (err, result) {

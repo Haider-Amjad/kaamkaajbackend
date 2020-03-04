@@ -8,6 +8,7 @@ var request = require('../controllers/request.js');
 //Add requests
 router.post('/add_request', function (req, res) {
     var requestform = req.body;
+    console.log(req.body.bidPrice)
     request.addrequest(requestform, function (err, request) 
     {
         if (err) 
@@ -19,7 +20,6 @@ router.post('/add_request', function (req, res) {
         } 
         else 
         {
-            console.log(request.bidPrice)
             var result = request.toObject();
             result.status = true;
             return res.json(result);
