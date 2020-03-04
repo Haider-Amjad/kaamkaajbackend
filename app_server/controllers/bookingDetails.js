@@ -22,7 +22,7 @@ module.exports.addBookingDetails =async (bookingDetailsform, callback) => {
     record.serviceProviderEmail=bookingDetailsform.serviceProviderEmail;
     record.serviceProviderName=bookingDetailsform.serviceProviderName;
     record.state=bookingDetailsform.state;
-    record.bookingType=bookingDetailsform.bookingType;
+    record.category=bookingDetailsform.category;
     
     
 
@@ -89,10 +89,13 @@ module.exports.addBookingDetails =async (bookingDetailsform, callback) => {
     {
         record.serviceProviderName="";
     }
-    if(!bookingDetailsform.bookingType)
+ 
+
+    if(!bookingDetailsform.category)
     {
-        record.bookingType="";
+        record.category="";
     }
+
 
     record.save(callback);
 }
