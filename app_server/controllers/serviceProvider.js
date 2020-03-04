@@ -267,14 +267,14 @@ module.exports.addServiceProvider = async (serviceProviderform, callback) => {
 module.exports.updateServiceProvider = async (email, serviceProviderform, options, callback) => {
     var query = {email: email};
     let record=new serviceProvider();
-    if(serviceProviderform.lat&&serviceProviderform.long)
-    {
-        serviceProviderform.location={lat:serviceProviderform.lat,long:serviceProviderform.long}
-    }
-    if(serviceProviderform.password)
-    {
-        serviceProviderform.password=record.hashPassword(serviceProviderform.password);
-    }
+    // if(serviceProviderform.lat&&serviceProviderform.long)
+    // {
+    //     serviceProviderform.location={lat:serviceProviderform.lat,long:serviceProviderform.long}
+    // }
+    // if(serviceProviderform.password)
+    // {
+    //     serviceProviderform.password=record.hashPassword(serviceProviderform.password);
+    // }
     if(serviceProviderform.picture_profile)
     {
         try
@@ -305,85 +305,7 @@ module.exports.updateServiceProvider = async (email, serviceProviderform, option
         serviceProviderform.picture_cover=imgUrl.url;
        
     }
-    
-    if(serviceProviderform.picture_1)
-    {
-        try
-        {
-            imgUrl=await functions.uploadPicture(serviceProviderform.picture_1);
-        }
-        catch(error)
-        {
-            console.log(error);
-            throw error;
-        }
-
-        serviceProviderform.picture_1=imgUrl.url;
-
-    }
-    
-    if(serviceProviderform.picture_2)
-    {
-        try
-        {
-            imgUrl=await functions.uploadPicture(serviceProviderform.picture_2);
-        }
-        catch(error)
-        {
-            console.log(error);
-            throw error;
-        }
-
-        serviceProviderform.picture_2=imgUrl.url;
-
-    }
-  
-    if(serviceProviderform.picture_3)
-    {
-        try
-        {
-            imgUrl=await functions.uploadPicture(serviceProviderform.picture_3);
-        }
-        catch(error)
-        {
-            console.log(error);
-            throw error;
-        }
-
-        serviceProviderform.picture_3=imgUrl.url;
-
-    }
-    
-    if(serviceProviderform.picture_4)
-    {
-        try
-        {
-            imgUrl=await functions.uploadPicture(serviceProviderform.picture_4);
-        }
-        catch(error)
-        {
-            console.log(error);
-            throw error;
-        }
-
-        serviceProviderform.picture_4=imgUrl.url;
-    }
-    
-    if(serviceProviderform.picture_5)
-    {
-        try
-        {
-            imgUrl=await functions.uploadPicture(serviceProviderform.picture_5);
-        }
-        catch(error)
-        {
-            console.log(error);
-            throw error;
-        }
-
-        serviceProviderform.picture_5=imgUrl.url;
-    }
-    serviceProvider.findOneAndUpdate(query, { $set: serviceProviderform},options,callback);
+    serviceProvider.findOneAndUpdate(query, serviceProviderform,options,callback);
 
 }
 
