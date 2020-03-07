@@ -271,10 +271,10 @@ module.exports.updateServiceProvider = async (email, serviceProviderform, option
     // {
     //     serviceProviderform.location={lat:serviceProviderform.lat,long:serviceProviderform.long}
     // }
-    // if(serviceProviderform.password)
-    // {
-    //     serviceProviderform.password=record.hashPassword(serviceProviderform.password);
-    // }
+    if(serviceProviderform.password)
+    {
+        serviceProviderform.password=record.hashPassword(serviceProviderform.password);
+    }
     if(serviceProviderform.picture_profile)
     {
         try
